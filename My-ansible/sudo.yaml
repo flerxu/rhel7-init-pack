@@ -1,0 +1,8 @@
+---
+ - hosts: ceph-nodes
+   remote_user: root
+   tasks:
+    - template:
+        src: /tmp/player
+        dest: /etc/sudoers.d/player
+    - command: chmod 0440 /etc/sudoers.d/player
